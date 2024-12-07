@@ -3,19 +3,21 @@ using TMPro;
 
 public class DayAndQuotaUI : MonoBehaviour
 {
-    public TMP_Text dayText;
     public TMP_Text quotaText;
 
     private void Start()
     {
-        TimeManager.Instance.OnDayUpdated += UpdateDayUI;
+        TimeManager.Instance.OnDayUpdated += UpdateQuotaUI;
     }
 
-    private void UpdateDayUI(int hour, int minute, int day)
+    private void OnDestroy()
     {
-        dayText.text = $"День: {day}";
+        TimeManager.Instance.OnDayUpdated -= UpdateQuotaUI;
+    }
 
+    private void UpdateQuotaUI(int hour, int minute, int day)
+    {
         int daysUntilQuota = QuotaManager.Instance.GetDaysUntilNextQuota(day);
-        quotaText.text = $"Дней до сдачи квоты: {daysUntilQuota}";
+        quotaText.text = $"Дней до окончания задания: {daysUntilQuota}";
     }
 }
