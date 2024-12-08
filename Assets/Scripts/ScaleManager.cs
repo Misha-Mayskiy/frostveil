@@ -3,8 +3,8 @@ using UnityEngine;
 public class ScaleManager : MonoBehaviour
 {
     // Значения шкал
-    private float pollution = 0f;
-    private float tension = 0f;
+    public float pollution = 0f;
+    public float tension = 0f;
 
     // Максимальные значения шкал
     private const float MaxPollution = 3000f;

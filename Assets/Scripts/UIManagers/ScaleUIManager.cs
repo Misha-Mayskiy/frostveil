@@ -20,7 +20,7 @@ public class ScaleUIManager : MonoBehaviour
     private void UpdatePollutionUI()
     {
         float pollution = scaleManager.GetPollution();
-        float maxPollution = 5000f; // Максимальное значение загрязненности
+        float maxPollution = 3000f; // Максимальное значение загрязненности
 
         // Обновляем заполнение полосы
         pollutionBar.fillAmount = pollution / maxPollution;

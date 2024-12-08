@@ -18,8 +18,7 @@ public class TimeUI : MonoBehaviour
 
     private void UpdateTimeUI(int hour, int minute, int day)
     {
-        Debug.Log($"Time Updated: {hour}:{minute}, Day: {day}");
         timeText.text = $"{hour:00}:{minute:00}";
-        dayText.text = $"День: {day}";
+        dayText.text = $"День {day}";
     }
 }

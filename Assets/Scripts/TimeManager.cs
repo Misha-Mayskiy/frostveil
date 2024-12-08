@@ -46,28 +46,54 @@ public class TimeManager : MonoBehaviour
     {
         int previousHour = currentHour;
         int previousMinute = currentMinute;
-        
+
         float normalizedTime = timeElapsed / DayDurationSeconds;
         currentHour = Mathf.FloorToInt(normalizedTime * 24);
         currentMinute = Mathf.FloorToInt((normalizedTime * 24 - currentHour) * 60);
-        
-        // Debug.Log($"{normalizedTime}, {currentHour}, {currentMinute}");
-        
-        // Только если время изменилось, вызываем событие
+
         if (currentHour != previousHour || currentMinute != previousMinute)
         {
             OnDayUpdated?.Invoke(currentHour, currentMinute, currentDay);
-        }
 
-        // Добавить вызовы событий
-        // if (currentHour == 13 && currentMinute == 0)
-        // {
-        //     OnFeedingTime?.Invoke(); // Кормление жителей
-        // }
-        // else if (currentHour == 20 && currentMinute == 0)
-        // {
-        //     OnExtraFeedingTime?.Invoke(); // Дополнительное кормление
-        // }
+            // Событие кормления
+            if (currentHour == 13 && currentMinute == 0)
+            {
+                ResidentManager.Instance.UpdateFeeding(FeedResidents());
+            }
+            else if (currentHour == 20 && currentMinute == 0)
+            {
+                ResidentManager.Instance.UpdateFeeding(FeedExtraResidents());
+            }
+        }
+    }
+
+    // Метод кормления
+    private int FeedResidents()
+    {
+        // Получаем количество доступных порций еды
+        int availableFood = ResourceManager.Instance.GetResource(ResourceManager.ResourceType.CookedFood);
+        // Считаем, сколько жителей нужно накормить
+        int residentsToFeed = Mathf.Min(availableFood, ResidentManager.Instance.TotalResidents);
+
+        // Уменьшаем запасы еды
+        ResourceManager.Instance.RemoveResource(ResourceManager.ResourceType.CookedFood, residentsToFeed);
+
+        return residentsToFeed;
+    }
+
+    private int FeedExtraResidents()
+    {
+        // Вычисляем количество недокормленных жителей
+        int unfedResidents = ResidentManager.Instance.TotalResidents - ResidentManager.Instance.FedResidents;
+        // Получаем доступное количество еды
+        int availableFood = ResourceManager.Instance.GetResource(ResourceManager.ResourceType.CookedFood);
+        // Считаем, сколько можно дополнительно накормить
+        int extraToFeed = Mathf.Min(availableFood, unfedResidents);
+
+        // Уменьшаем запасы еды
+        ResourceManager.Instance.RemoveResource(ResourceManager.ResourceType.CookedFood, extraToFeed);
+
+        return ResidentManager.Instance.FedResidents + extraToFeed;
     }
 
     public void SetTimeScale(float scale)

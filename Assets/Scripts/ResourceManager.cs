@@ -11,6 +11,7 @@ public class ResourceManager : MonoBehaviour
         Iron,
         Copper,
         OrganicFood,
+        CookedFood, // Добавляем готовую еду
         Fuel,
         Oil,
         Uranium,
@@ -22,6 +23,7 @@ public class ResourceManager : MonoBehaviour
 
     public static ResourceManager Instance { get; private set; }
     public ResourceUIManager resourceUIManager;
+
     private Dictionary<ResourceType, int> resources = new Dictionary<ResourceType, int>();
     private Dictionary<ResourceType, int> resourceLimits = new Dictionary<ResourceType, int>();
 
@@ -53,7 +55,6 @@ public class ResourceManager : MonoBehaviour
         if (!resources.ContainsKey(resourceType) || resourceType == ResourceType.None) return;
 
         resources[resourceType] = Mathf.Min(resources[resourceType] + amount, resourceLimits[resourceType]);
-        // Debug.Log($"Successful plused: {resourceType} = {resources[resourceType]}");
     }
 
     public bool RemoveResource(ResourceType resourceType, int amount)

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OpenableMenuManager : MonoBehaviour
 {
@@ -8,12 +9,14 @@ public class OpenableMenuManager : MonoBehaviour
 
     [Header("Индивидуальные меню")]
     public GameObject buildMenu;        // Меню построек
+    public GameObject hintsMenu;        // Меню подсказок
     public GameObject researchMenu;     // Меню исследований
     public GameObject quotaMenu;        // Меню квот
     public GameObject statsMenu;        // Меню статистики
 
     private GameObject activeMenu = null; // Текущее активное меню
     private bool isBuildMenuOpen = false; // Флаг для управления меню построек
+    private bool isHintsMenuOpen = false;
 
     void Update()
     {
@@ -92,6 +95,7 @@ public class OpenableMenuManager : MonoBehaviour
     /// </summary>
     private void CloseAllMenus()
     {
+        hintsMenu.SetActive(false);
         buildMenu.SetActive(false);
         researchMenu.SetActive(false);
         quotaMenu.SetActive(false);
@@ -108,7 +112,7 @@ public class OpenableMenuManager : MonoBehaviour
     public void QuitToMainMenu()
     {
         Time.timeScale = 1f; // Сбрасываем время в нормальный режим
-        // SceneManager.LoadScene("MainMenu"); // Загрузка главного меню
+        SceneManager.LoadScene("MainMenu"); // Загрузка главного меню
     }
 
     /// <summary>
@@ -152,5 +156,29 @@ public class OpenableMenuManager : MonoBehaviour
     {
         buildMenu.SetActive(false);
         isBuildMenuOpen = false;
+    }
+
+    public void ToggleHintsMenu()
+    {
+        if (isHintsMenuOpen)
+        {
+            CloseHintsMenu();
+        }
+        else
+        {
+            OpenHintsMenu();
+        }
+    }
+
+    private void OpenHintsMenu()
+    {
+        hintsMenu.SetActive(true);
+        isHintsMenuOpen = true;
+    }
+
+    private void CloseHintsMenu()
+    {
+        hintsMenu.SetActive(false);
+        isHintsMenuOpen = false;
     }
 }

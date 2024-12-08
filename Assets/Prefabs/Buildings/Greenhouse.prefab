@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7654483723557187256}
   - component: {fileID: 7738464504944140232}
+  - component: {fileID: 7821025269482827959}
   m_Layer: 6
   m_Name: Greenhouse
   m_TagString: Untagged
@@ -54,6 +55,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 7, y: 6.0078273, z: 7}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7821025269482827959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799987906403557228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a11e86760a02ca54fa785b2fbce56a7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  workersRequired: 5
+  currentWorkers: 0
+  category: Food
+  buildingName: "\u0422\u0435\u043F\u043B\u0438\u0446\u0430"
+  productionInterval: 4
 --- !u!1001 &4758656462801185510
 PrefabInstance:
   m_ObjectHideFlags: 0

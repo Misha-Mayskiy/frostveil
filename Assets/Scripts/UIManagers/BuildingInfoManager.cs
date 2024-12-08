@@ -136,7 +136,7 @@ public class BuildingInfoManager : MonoBehaviour
 
     private void ToggleBuildingState(bool isOn)
     {
-        if (currentBuilding != null)
+        if ((currentBuilding != null) && (currentBuilding is not House house))
         {
             currentBuilding.ToggleOperational(isOn);
         }
@@ -144,10 +144,29 @@ public class BuildingInfoManager : MonoBehaviour
 
     private void ChangeWorkers(int amount)
     {
-        if (currentBuilding != null)
+        if ((currentBuilding != null) && (currentBuilding is not House house))
         {
-            currentBuilding.AdjustWorkers(amount);
-            workersText.text = $"{currentBuilding.currentWorkers} / {currentBuilding.workersRequired}";
+            if (amount > 0)
+            {
+                // Проверяем, достаточно ли рабочих
+                if (ResidentManager.Instance.AssignWorkers(amount))
+                {
+                    currentBuilding.AdjustWorkers(amount);
+                    workersText.text = $"{currentBuilding.currentWorkers} / {currentBuilding.workersRequired}";
+                }
+                else
+                {
+                    Debug.LogWarning("Недостаточно свободных рабочих!");
+                }
+            }
+            else if (amount < 0)
+            {
+                // Освобождаем рабочих при уменьшении
+                int actualAmount = Mathf.Abs(amount);
+                currentBuilding.AdjustWorkers(-actualAmount);
+                ResidentManager.Instance.UnassignWorkers(actualAmount);
+                workersText.text = $"{currentBuilding.currentWorkers} / {currentBuilding.workersRequired}";
+            }
         }
     }
 
@@ -245,11 +264,13 @@ public class BuildingInfoManager : MonoBehaviour
             // int refundAmount = Mathf.FloorToInt(currentBuilding.BuildCost * 0.5f);
             // ResourceManager.Instance.AddResources(refundAmount);
 
-            // Удаление объекта здания
+            ResidentManager.Instance.UnassignWorkers(currentBuilding.currentWorkers);
+            if (currentBuilding is House house) {
+                house.OnDestroyed();
+            }
             Destroy(currentBuilding.gameObject);
             currentBuilding = null;
 
-            // Закрытие панели
             gameObject.SetActive(false);
         }
     }
