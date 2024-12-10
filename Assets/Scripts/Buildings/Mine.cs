@@ -7,7 +7,6 @@ public class Mine : Building
 
     private float extractionRate = 1f; // Скорость добычи ресурсов
     private float extractionTimer = 0f; // Таймер добычи
-    private float pollutionCount = 150f; // Загрязнение от шахты
     public float resourceDetectionRadius = 1f; // Радиус проверки ресурсов
     public float ExtractionRate => extractionRate; // Публичное свойство для скорости добычи
 

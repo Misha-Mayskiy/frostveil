@@ -5,15 +5,15 @@ public class CameraController : MonoBehaviour
     public Transform target; // Центр, вокруг которого будет вращаться камера
     public float rotationSpeed = 5f; // Скорость вращения камеры
     public float[] zoomLevels = { 5f, 10f, 15f }; // Уровни приближения
-    public float moveSpeed = 5f; // Скорость перемещения камеры
+    // public float moveSpeed = 5f; // Скорость перемещения камеры
     public float zoomSpeed = 5f; // Скорость изменения уровня приближения
-    public float minZoomDistance = 2f; // Минимальное расстояние зума
-    public float maxZoomDistance = 20f; // Максимальное расстояние зума
-    public float moveSensitivity = 0.1f; // Чувствительность перемещения мыши
+    // public float minZoomDistance = 2f; // Минимальное расстояние зума
+    // public float maxZoomDistance = 20f; // Максимальное расстояние зума
+    // public float moveSensitivity = 0.1f; // Чувствительность перемещения мыши
 
     private int currentZoomLevel = 3; // Текущий уровень приближения
-    private bool isRotating = false; // Флаг для отслеживания вращения
-    private bool isMoving = false; // Флаг для отслеживания перемещения
+    // private bool isRotating = false; // Флаг для отслеживания вращения
+    // private bool isMoving = false; // Флаг для отслеживания перемещения
     private float currentZoomDistance; // Текущее расстояние зума
     private Plane movementPlane; // Плоскость для перемещения камеры
 

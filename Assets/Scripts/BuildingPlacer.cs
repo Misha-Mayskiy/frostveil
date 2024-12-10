@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UIElements;
 
 public class BuildingPlacer : MonoBehaviour
 {
@@ -226,6 +227,9 @@ public class BuildingPlacer : MonoBehaviour
                 drill.CheckResourceZone();
             }
 
+            Building currentB = currentBuilding.GetComponent<Building>();
+            FindObjectOfType<BuildingManager>().RegisterBuilding(currentB);
+            
             currentBuilding = null; // Завершаем размещение
 
             // Скрыть сетку

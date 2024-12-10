@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7654483723557187256}
   - component: {fileID: 7738464504944140232}
+  - component: {fileID: -3337500120786856744}
   m_Layer: 6
   m_Name: FunCentre
   m_TagString: Untagged
@@ -54,6 +55,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 7.633746, y: 7.164819, z: 7}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-3337500120786856744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799987906403557228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5ec00766a361dd4b9fdd8c1bd70ac41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  workersRequired: 10
+  currentWorkers: 0
+  category: Specialized
+  buildingName: "\u0410\u0442\u0440\u0438\u0443\u043C"
+  pollutionRate: 0
+  pollutionCount: 0
 --- !u!1001 &2823457668791706954
 PrefabInstance:
   m_ObjectHideFlags: 0

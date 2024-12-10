@@ -71,6 +71,8 @@ MonoBehaviour:
   currentWorkers: 0
   category: Extraction
   buildingName: "\u0428\u0430\u0445\u0442\u0430"
+  pollutionRate: 1
+  pollutionCount: 150
   resourceType: 0
   resourceDetectionRadius: 1
 --- !u!1001 &8746343141869239852

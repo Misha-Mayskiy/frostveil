@@ -71,6 +71,8 @@ MonoBehaviour:
   currentWorkers: 0
   category: Food
   buildingName: "\u041A\u0430\u0444\u0435"
+  pollutionRate: 0
+  pollutionCount: 0
   foodProductionRate: 4
   productionTimeSeconds: 10
 --- !u!1001 &7012816851656967126

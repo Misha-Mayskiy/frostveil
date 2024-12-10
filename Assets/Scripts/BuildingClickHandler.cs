@@ -3,10 +3,12 @@ using UnityEngine;
 public class BuildingClickHandler : MonoBehaviour
 {
     public BuildingInfoManager buildingInfoManager; // Ссылка на BuildingInfoManager
+    public GameObject uiCanvas;
+    public GameObject mainCamera;
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (uiCanvas.activeSelf && mainCamera.activeSelf && Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             int buildingLayer = LayerMask.GetMask("Building");

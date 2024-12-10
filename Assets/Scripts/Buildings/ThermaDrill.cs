@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class ThermalDrill : Building
 {
@@ -7,7 +8,6 @@ public class ThermalDrill : Building
 
     private float extractionRate = 1f;
     private float extractionTimer = 0f;
-    private float pollutionCount = 100f;
     public float resourceDetectionRadius = 1f; // Радиус проверки ресурсов
 
     public float ExtractionRate => extractionRate; // Публичное свойство
@@ -18,7 +18,11 @@ public class ThermalDrill : Building
         category = "Extraction";
         workersRequired = 5;
 
-        // Проверка ресурса при старте
+        // constructionCost = new Dictionary<ResourceManager.ResourceType, int>
+        // {
+        //     { ResourceManager.ResourceType.Iron, 30 },
+        //     { ResourceManager.ResourceType.Stone, 15 }
+        // };
         CheckResourceZone();
     }
 
@@ -109,4 +113,5 @@ public class ThermalDrill : Building
         CheckResourceZone(); // Проверить наличие ресурсов заново
         isOperational = (currentWorkers >= workersRequired) && isOperational;
     }
+    
 }

@@ -16,16 +16,24 @@ public class ScaleManager : MonoBehaviour
     private const float HighPollutionThreshold = 0.9f; // 90%
 
     private float tensionIncreaseRate = 0f;
+    private float updateInterval = 0.5f; // Интервал обновления в секундах
+    private float nextUpdateTime = 0f;  // Время следующего обновления
 
     private void Update()
     {
-        // Обновляем загрязнение и напряженность
-        UpdatePollution();
-        UpdateTension();
+        if (Time.time >= nextUpdateTime)
+        {
+            // Устанавливаем время следующего обновления
+            nextUpdateTime = Time.time + updateInterval;
 
-        // Ограничиваем значения шкал
-        pollution = Mathf.Clamp(pollution, 0, MaxPollution);
-        tension = Mathf.Clamp(tension, 0, MaxTension);
+            // Обновляем загрязнение и напряженность
+            UpdatePollution();
+            UpdateTension();
+
+            // Ограничиваем значения шкал
+            pollution = Mathf.Clamp(pollution, 0, MaxPollution);
+            tension = Mathf.Clamp(tension, 0, MaxTension);
+        }
     }
 
     private void UpdatePollution()
@@ -59,7 +67,7 @@ public class ScaleManager : MonoBehaviour
         }
 
         // Увеличиваем напряженность
-        tension += tensionIncreaseRate * Time.deltaTime / 20f; // Разделение на 20 секунд
+        tension += tensionIncreaseRate * Time.deltaTime * 6f; // Разделение на 20 секунд
     }
 
     // Получение текущего уровня загрязнения

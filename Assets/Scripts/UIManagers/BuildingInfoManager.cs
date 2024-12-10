@@ -30,8 +30,7 @@ public class BuildingInfoManager : MonoBehaviour
 
     [SerializeField] private Dictionary<ThermalDrill.ResourceType, Sprite> resourceIconsDrill;
     [SerializeField] private Dictionary<Mine.ResourceType, Sprite> resourceIconsMine;
-    [SerializeField]
-    private List<BuildingIcon> buildingIcons;
+    [SerializeField] private List<BuildingIcon> buildingIcons;
 
     private void Awake()
     {
@@ -149,23 +148,26 @@ public class BuildingInfoManager : MonoBehaviour
             if (amount > 0)
             {
                 // Проверяем, достаточно ли рабочих
-                if (ResidentManager.Instance.AssignWorkers(amount))
+                if ((currentBuilding.currentWorkers < currentBuilding.workersRequired) && ResidentManager.Instance.AssignWorkers(amount))
                 {
                     currentBuilding.AdjustWorkers(amount);
                     workersText.text = $"{currentBuilding.currentWorkers} / {currentBuilding.workersRequired}";
                 }
                 else
                 {
-                    Debug.LogWarning("Недостаточно свободных рабочих!");
+                    Debug.LogWarning("Недостаточно своб.рабочих либо макс.рабочих в здании!");
                 }
             }
             else if (amount < 0)
             {
                 // Освобождаем рабочих при уменьшении
-                int actualAmount = Mathf.Abs(amount);
-                currentBuilding.AdjustWorkers(-actualAmount);
-                ResidentManager.Instance.UnassignWorkers(actualAmount);
-                workersText.text = $"{currentBuilding.currentWorkers} / {currentBuilding.workersRequired}";
+                if (currentBuilding.currentWorkers > 0)
+                {
+                    int actualAmount = Mathf.Abs(amount);
+                    currentBuilding.AdjustWorkers(-actualAmount);
+                    ResidentManager.Instance.UnassignWorkers(actualAmount);
+                    workersText.text = $"{currentBuilding.currentWorkers} / {currentBuilding.workersRequired}";
+                }
             }
         }
     }
@@ -268,6 +270,9 @@ public class BuildingInfoManager : MonoBehaviour
             if (currentBuilding is House house) {
                 house.OnDestroyed();
             }
+
+            FindObjectOfType<BuildingManager>().UnregisterBuilding(currentBuilding);
+
             Destroy(currentBuilding.gameObject);
             currentBuilding = null;
 

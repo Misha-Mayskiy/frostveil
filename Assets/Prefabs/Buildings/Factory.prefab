@@ -67,10 +67,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e2e0588efe4024c9137a2c1eb43c04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  workersRequired: 10
+  workersRequired: 5
   currentWorkers: 0
   category: Processing
   buildingName: "\u041A\u0440\u0430\u0444\u0442 \u0431\u043B\u043E\u043A"
+  pollutionRate: 1
+  pollutionCount: 120
 --- !u!1001 &5083375402176952054
 PrefabInstance:
   m_ObjectHideFlags: 0

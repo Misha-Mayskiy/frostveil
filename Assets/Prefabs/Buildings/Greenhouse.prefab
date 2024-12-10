@@ -70,7 +70,9 @@ MonoBehaviour:
   workersRequired: 5
   currentWorkers: 0
   category: Food
-  buildingName: "\u0422\u0435\u043F\u043B\u0438\u0446\u0430"
+  buildingName: "\u0424\u0435\u0440\u043C\u0430"
+  pollutionRate: 0
+  pollutionCount: 0
   productionInterval: 4
 --- !u!1001 &4758656462801185510
 PrefabInstance:

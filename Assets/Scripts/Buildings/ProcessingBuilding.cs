@@ -7,8 +7,6 @@ public class ProcessingBuilding : Building
 
     private float productionTimer = 0f;
     private float productionInterval = 8f; // Интервал производства
-    private float pollutionRate = 1f; // Множитель загрязнения
-    private float pollutionCount = 120f;
 
     protected override void Start()
     {
@@ -75,11 +73,6 @@ public class ProcessingBuilding : Building
             case ResourceManager.ResourceType.Fuel: return ResourceManager.ResourceType.Honey;
             default: return ResourceManager.ResourceType.None;
         }
-    }
-
-    public override float GetPollutionCount()
-    {
-        return pollutionCount * pollutionRate;
     }
 
     public void SelectRecipe(RecipeType recipe)
