@@ -212,6 +212,18 @@ public class BuildingPlacer : MonoBehaviour
     {
         if (currentBuilding != null)
         {
+            Building building = currentBuilding.GetComponent<Building>();
+            if (building != null)
+            {
+                if (!building.HasEnoughResources())
+                {
+                    Debug.LogWarning("Not enough resources to place this building!");
+                    return;
+                }
+
+                building.DeductResources();
+            }
+
             // Восстанавливаем оригинальные материалы
             for (int i = 0; i < buildingRenderers.Length; i++)
             {

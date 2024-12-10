@@ -9,12 +9,12 @@ public abstract class Building : MonoBehaviour
     public string category;          // Категория здания
     public string buildingName;      // Название здания
 
-    // [Header("Стоимость постройки")]
-    // public Dictionary<ResourceManager.ResourceType, int> constructionCost = new Dictionary<ResourceManager.ResourceType, int>();
-
     [Header("Параметры загрязнения")]
     public float pollutionRate = 1f;    // Уровень загрязнения
     public float pollutionCount = 0f;  // Количество загрязнения
+
+    [Header("Ресурсы для строительства")]
+    public List<ResourceRequirement> resourceRequirements; // Список требуемых ресурсов
 
     [Header("Состояние здания")]
     protected bool isOperational = false; // Работает ли здание
@@ -97,32 +97,32 @@ public abstract class Building : MonoBehaviour
         SetWorkers(currentWorkers + amount); // Увеличиваем или уменьшаем число рабочих
     }
 
-    // public bool CanBuild()
-    // {
-    //     foreach (var cost in constructionCost)
-    //     {
-    //         if (ResourceManager.Instance.GetResource(cost.Key) < cost.Value)
-    //         {
-    //             return false;
-    //         }
-    //     }
-    //     return true;
-    // }
+    // Проверка наличия ресурсов
+    public bool HasEnoughResources()
+    {
+        foreach (var requirement in resourceRequirements)
+        {
+            if (ResourceManager.Instance.GetResource(requirement.resourceType) < requirement.amount)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
 
-    // public void ConsumeResourcesForConstruction()
-    // {
-    //     foreach (var cost in constructionCost)
-    //     {
-    //         ResourceManager.Instance.RemoveResource(cost.Key, cost.Value);
-    //     }
-    // }
+    // Вычитание ресурсов
+    public void DeductResources()
+    {
+        foreach (var requirement in resourceRequirements)
+        {
+            ResourceManager.Instance.RemoveResource(requirement.resourceType, requirement.amount);
+        }
+    }
+}
 
-    // public void RefundResources()
-    // {
-    //     foreach (var cost in constructionCost)
-    //     {
-    //         int refundAmount = Mathf.FloorToInt(cost.Value * 0.6f); // 60% возврат
-    //         ResourceManager.Instance.AddResource(cost.Key, refundAmount);
-    //     }
-    // }
+[System.Serializable]
+public class ResourceRequirement
+{
+    public ResourceManager.ResourceType resourceType; // Тип ресурса
+    public int amount; // Количество ресурса
 }

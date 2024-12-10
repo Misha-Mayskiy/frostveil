@@ -73,6 +73,13 @@ MonoBehaviour:
   buildingName: "\u041A\u0430\u0444\u0435"
   pollutionRate: 0
   pollutionCount: 0
+  resourceRequirements:
+  - resourceType: 2
+    amount: 25
+  - resourceType: 3
+    amount: 15
+  - resourceType: 1
+    amount: 30
   foodProductionRate: 4
   productionTimeSeconds: 10
 --- !u!1001 &7012816851656967126

@@ -73,6 +73,13 @@ MonoBehaviour:
   buildingName: "\u0410\u0442\u0440\u0438\u0443\u043C"
   pollutionRate: 0
   pollutionCount: 0
+  resourceRequirements:
+  - resourceType: 2
+    amount: 40
+  - resourceType: 1
+    amount: 25
+  - resourceType: 3
+    amount: 10
 --- !u!1001 &2823457668791706954
 PrefabInstance:
   m_ObjectHideFlags: 0

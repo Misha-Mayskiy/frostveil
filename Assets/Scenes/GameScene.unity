@@ -6477,6 +6477,9 @@ MonoBehaviour:
       \u0443\u044E\u0442 \u0438 \u043A\u043E\u043C\u0444\u043E\u0440\u0442 \u0434\u043B\u044F
       10 \u0436\u0438\u0442\u0435\u043B\u0435\u0439."
     prefab: {fileID: 799987906403557228, guid: d7af0e41551cd0c45bc66d930c09737e, type: 3}
+    costs:
+    - resourceType: 2
+      amount: 25
   - name: "\u041A\u0430\u0444\u0435"
     icon: {fileID: 21300000, guid: b4a86c19e289aa1438a5057d4e72ea0d, type: 3}
     description: "\u0413\u043E\u0442\u043E\u0432\u0438\u0442 \u0432\u043A\u0443\u0441\u043D\u044B\u0435
@@ -6485,6 +6488,13 @@ MonoBehaviour:
       \u043F\u043E\u0434\u043D\u0438\u043C\u0430\u044F \u043D\u0430\u0441\u0442\u0440\u043E\u0435\u043D\u0438\u0435
       \u0436\u0438\u0442\u0435\u043B\u0435\u0439."
     prefab: {fileID: 799987906403557228, guid: 73e5c8fe280a58f4bbe6937ed16cdfd3, type: 3}
+    costs:
+    - resourceType: 2
+      amount: 25
+    - resourceType: 3
+      amount: 15
+    - resourceType: 1
+      amount: 30
   - name: "\u0424\u0435\u0440\u043C\u0430"
     icon: {fileID: 21300000, guid: 71648880f3ffe5648b619290dee04640, type: 3}
     description: "\u0412\u044B\u0440\u0430\u0449\u0438\u0432\u0430\u0435\u0442 \u0441\u0432\u0435\u0436\u0443\u044E
@@ -6492,6 +6502,13 @@ MonoBehaviour:
       \u043F\u043E\u0434\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u044F \u043A\u043E\u043B\u043E\u043D\u0438\u044E
       \u0437\u0434\u043E\u0440\u043E\u0432\u043E\u0439."
     prefab: {fileID: 799987906403557228, guid: 9228e8b6929eee041b584cda346090da, type: 3}
+    costs:
+    - resourceType: 2
+      amount: 30
+    - resourceType: 1
+      amount: 30
+    - resourceType: 3
+      amount: 10
   specializedBuildings:
   - name: "\u041D\u0430\u0443\u0447\u043D\u044B\u0439 \u0445\u0430\u0431"
     icon: {fileID: 21300000, guid: 4226ea35e109f6a41872b0f08bd2a06d, type: 3}
@@ -6499,6 +6516,15 @@ MonoBehaviour:
       \u0434\u0432\u0438\u0433\u0430\u044F \u0432\u0430\u0448\u0443 \u043A\u043E\u043B\u043E\u043D\u0438\u044E
       \u043A \u0441\u0432\u0435\u0442\u043B\u043E\u043C\u0443 \u0431\u0443\u0434\u0443\u0449\u0435\u043C\u0443."
     prefab: {fileID: 799987906403557228, guid: 427087646c90faa42a8002236b07768e, type: 3}
+    costs:
+    - resourceType: 2
+      amount: 100
+    - resourceType: 3
+      amount: 50
+    - resourceType: 4
+      amount: 50
+    - resourceType: 9
+      amount: 20
   - name: "\u041E\u0447\u0438\u0441\u0442\u0438\u0442\u0435\u043B\u044C"
     icon: {fileID: 21300000, guid: b6f04c1905031f941b98c95ffd1c84f7, type: 3}
     description: "\u041E\u0447\u0438\u0449\u0430\u0435\u0442 \u043E\u043A\u0440\u0443\u0436\u0430\u044E\u0449\u0443\u044E
@@ -6506,6 +6532,13 @@ MonoBehaviour:
       \u043F\u043B\u0430\u043D\u0435\u0442\u0435 \u0447\u0438\u0441\u0442\u044B\u0439
       \u0432\u043E\u0437\u0434\u0443\u0445."
     prefab: {fileID: 799987906403557228, guid: 10c62a239512203478cda6cac7467c3a, type: 3}
+    costs:
+    - resourceType: 2
+      amount: 60
+    - resourceType: 3
+      amount: 40
+    - resourceType: 1
+      amount: 20
   - name: "\u0411\u0430\u0440\u044C\u0435\u0440"
     icon: {fileID: 21300000, guid: 75fa8f504ea6c8c4aa1c0d339e2cfba2, type: 3}
     description: "\u0417\u0430\u0449\u0438\u0449\u0430\u0435\u0442 \u0441\u043E\u0441\u0435\u0434\u043D\u0438\u0435
@@ -6513,6 +6546,13 @@ MonoBehaviour:
       \u043C\u0435\u0442\u0435\u043B\u0435\u0439, \u0441\u043E\u0445\u0440\u0430\u043D\u044F\u044F
       \u0438\u0445 \u0446\u0435\u043B\u043E\u0441\u0442\u043D\u043E\u0441\u0442\u044C."
     prefab: {fileID: 799987906403557228, guid: 919316a1f06afb94b8f4bbbff83e14fb, type: 3}
+    costs:
+    - resourceType: 2
+      amount: 20
+    - resourceType: 3
+      amount: 20
+    - resourceType: 9
+      amount: 5
   - name: "\u0410\u0442\u0440\u0438\u0443\u043C"
     icon: {fileID: 21300000, guid: cd035aa56093c8c439146276c089b224, type: 3}
     description: "\u0421\u043D\u0438\u0436\u0430\u0435\u0442 \u043D\u0430\u043F\u0440\u044F\u0436\u0435\u043D\u043D\u043E\u0441\u0442\u044C
@@ -6521,6 +6561,13 @@ MonoBehaviour:
       \u0437\u0430 \u0447\u0430\u0448\u0435\u0447\u043A\u043E\u0439 \u0447\u0430\u044F
       \u0438\u043B\u0438 \u0432\u0435\u0441\u0435\u043B\u043E\u0439 \u0438\u0433\u0440\u043E\u0439."
     prefab: {fileID: 799987906403557228, guid: 01ecc97eb00eaac4dbe7b12822ea8b1a, type: 3}
+    costs:
+    - resourceType: 2
+      amount: 40
+    - resourceType: 1
+      amount: 25
+    - resourceType: 3
+      amount: 10
   processingBuildings:
   - name: "\u041A\u0440\u0430\u0444\u0442 \u0431\u043B\u043E\u043A"
     icon: {fileID: 21300000, guid: b89f27d938b149f498f4987660c08490, type: 3}
@@ -6529,6 +6576,13 @@ MonoBehaviour:
       \u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u044B\u0435 \u0434\u043B\u044F
       \u0440\u0430\u0437\u0432\u0438\u0442\u0438\u044F \u043A\u043E\u043B\u043E\u043D\u0438\u0438."
     prefab: {fileID: 799987906403557228, guid: a4f910c69ff52ab4fa03a7ae592e22af, type: 3}
+    costs:
+    - resourceType: 2
+      amount: 40
+    - resourceType: 3
+      amount: 30
+    - resourceType: 4
+      amount: 30
   - name: "\u0425\u0440\u0430\u043D\u0438\u043B\u0438\u0449\u0435"
     icon: {fileID: 21300000, guid: dabbe3ff46ff28744a87637bea431bc1, type: 3}
     description: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
@@ -6537,6 +6591,11 @@ MonoBehaviour:
       \u0440\u0435\u0441\u0443\u0440\u0441\u0430, \u043E\u0431\u0435\u0441\u043F\u0435\u0447\u0438\u0432\u0430\u044F
       \u043F\u043E\u0440\u044F\u0434\u043E\u043A \u043D\u0430 \u0441\u043A\u043B\u0430\u0434\u0435."
     prefab: {fileID: 799987906403557228, guid: 794abe202bfbe934d93dcfe0e36b6a0e, type: 3}
+    costs:
+    - resourceType: 2
+      amount: 30
+    - resourceType: 3
+      amount: 15
   extractionBuildings:
   - name: "\u0422\u0435\u0440\u043C\u043E\u0431\u0443\u0440"
     icon: {fileID: 21300000, guid: 9f5a0d3ba380f93429b313ecc389a136, type: 3}
@@ -6546,6 +6605,11 @@ MonoBehaviour:
       \u0441 \u043F\u043E\u043C\u043E\u0449\u044C\u044E \u043C\u043E\u0449\u043D\u044B\u0445
       \u0431\u0443\u0440\u043E\u0432\u044B\u0445 \u0443\u0441\u0442\u0430\u043D\u043E\u0432\u043E\u043A."
     prefab: {fileID: 799987906403557228, guid: c8cb237e0a2e00c4b991167be820f7c7, type: 3}
+    costs:
+    - resourceType: 2
+      amount: 10
+    - resourceType: 4
+      amount: 10
   - name: "\u0428\u0430\u0445\u0442\u0430"
     icon: {fileID: 21300000, guid: e5571b3667f059b4e850273bd4c3c2dc, type: 3}
     description: "\u0414\u043E\u0431\u044B\u0432\u0430\u0435\u0442 \u043D\u0435\u0444\u0442\u044C
@@ -6553,6 +6617,11 @@ MonoBehaviour:
       \u043F\u043B\u0430\u043D\u0435\u0442\u044B, \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u044F
       \u0441\u043B\u043E\u0436\u043D\u043E\u0435 \u043E\u0431\u043E\u0440\u0443\u0434\u043E\u0432\u0430\u043D\u0438\u0435."
     prefab: {fileID: 799987906403557228, guid: c885d67bbff4d1b4393f58bf2f3a7461, type: 3}
+    costs:
+    - resourceType: 2
+      amount: 20
+    - resourceType: 4
+      amount: 20
   buildingPlacer: {fileID: 710190877}
 --- !u!114 &200734939
 MonoBehaviour:
@@ -6713,7 +6782,7 @@ PrefabInstance:
     - target: {fileID: 2900272775949446723, guid: d717ad99144f09a46aa4858e20e89221,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2900272775949446723, guid: d717ad99144f09a46aa4858e20e89221,
         type: 3}
@@ -6723,7 +6792,7 @@ PrefabInstance:
     - target: {fileID: 2900272775949446723, guid: d717ad99144f09a46aa4858e20e89221,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2900272775949446723, guid: d717ad99144f09a46aa4858e20e89221,
         type: 3}
@@ -6773,12 +6842,12 @@ PrefabInstance:
     - target: {fileID: 2900272775949446723, guid: d717ad99144f09a46aa4858e20e89221,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 557.5284
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2900272775949446723, guid: d717ad99144f09a46aa4858e20e89221,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2900272775949446723, guid: d717ad99144f09a46aa4858e20e89221,
         type: 3}
@@ -8210,7 +8279,7 @@ PrefabInstance:
     - target: {fileID: 2900272775949446723, guid: d717ad99144f09a46aa4858e20e89221,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2900272775949446723, guid: d717ad99144f09a46aa4858e20e89221,
         type: 3}
@@ -8220,7 +8289,7 @@ PrefabInstance:
     - target: {fileID: 2900272775949446723, guid: d717ad99144f09a46aa4858e20e89221,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2900272775949446723, guid: d717ad99144f09a46aa4858e20e89221,
         type: 3}
@@ -8270,12 +8339,12 @@ PrefabInstance:
     - target: {fileID: 2900272775949446723, guid: d717ad99144f09a46aa4858e20e89221,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 398.23456
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2900272775949446723, guid: d717ad99144f09a46aa4858e20e89221,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2900272775949446723, guid: d717ad99144f09a46aa4858e20e89221,
         type: 3}
@@ -15346,7 +15415,7 @@ PrefabInstance:
     - target: {fileID: 2900272775949446723, guid: d717ad99144f09a46aa4858e20e89221,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2900272775949446723, guid: d717ad99144f09a46aa4858e20e89221,
         type: 3}
@@ -15356,7 +15425,7 @@ PrefabInstance:
     - target: {fileID: 2900272775949446723, guid: d717ad99144f09a46aa4858e20e89221,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2900272775949446723, guid: d717ad99144f09a46aa4858e20e89221,
         type: 3}
@@ -15406,12 +15475,12 @@ PrefabInstance:
     - target: {fileID: 2900272775949446723, guid: d717ad99144f09a46aa4858e20e89221,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 79.64691
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2900272775949446723, guid: d717ad99144f09a46aa4858e20e89221,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2900272775949446723, guid: d717ad99144f09a46aa4858e20e89221,
         type: 3}
@@ -17885,7 +17954,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1004031692
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25682,8 +25751,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -26472,8 +26541,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u0422\u0438\u043F\u043E \u0448\u043A\u0430\u043B\u0430 \u043B\u044E\u0442\u0430\u044F"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dd59a48abef9fc3489925dcd3412d1e6, type: 2}
+  m_sharedMaterial: {fileID: -6780867846242478317, guid: dd59a48abef9fc3489925dcd3412d1e6,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -27135,15 +27205,16 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dd59a48abef9fc3489925dcd3412d1e6, type: 2}
+  m_sharedMaterial: {fileID: -6780867846242478317, guid: dd59a48abef9fc3489925dcd3412d1e6,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -27502,8 +27573,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -28909,7 +28980,7 @@ PrefabInstance:
     - target: {fileID: 2900272775949446723, guid: d717ad99144f09a46aa4858e20e89221,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2900272775949446723, guid: d717ad99144f09a46aa4858e20e89221,
         type: 3}
@@ -28919,7 +28990,7 @@ PrefabInstance:
     - target: {fileID: 2900272775949446723, guid: d717ad99144f09a46aa4858e20e89221,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2900272775949446723, guid: d717ad99144f09a46aa4858e20e89221,
         type: 3}
@@ -28969,12 +29040,12 @@ PrefabInstance:
     - target: {fileID: 2900272775949446723, guid: d717ad99144f09a46aa4858e20e89221,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 238.94073
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2900272775949446723, guid: d717ad99144f09a46aa4858e20e89221,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2900272775949446723, guid: d717ad99144f09a46aa4858e20e89221,
         type: 3}

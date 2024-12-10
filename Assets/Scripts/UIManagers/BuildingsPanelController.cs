@@ -77,13 +77,39 @@ public class BuildingsPanelController : MonoBehaviour
             return;
         }
 
+        // Проверка ресурсов
+        if (!HasEnoughResources(building))
+        {
+            Debug.LogWarning($"Not enough resources to build {building.name}!");
+            return;
+        }
+
         // Передаём префаб в BuildingPlacer
         buildingPlacer.StartPlacingBuilding(building.prefab);
     }
 
+    private bool HasEnoughResources(BuildingData building)
+    {
+        foreach (var cost in building.costs)
+        {
+            int currentAmount = ResourceManager.Instance.GetResource(cost.resourceType);
+            if (currentAmount < cost.amount)
+            {
+                return false; // Недостаточно ресурса
+            }
+        }
+        return true;
+    }
+
     private void UpdateDescription(BuildingData building)
     {
-        descriptionText.text = building.description;
+        string resourceCosts = "Стоимость:\n";
+        foreach (var cost in building.costs)
+        {
+            resourceCosts += $"{cost.resourceType}: {cost.amount}; ";
+        }
+
+        descriptionText.text = $"{resourceCosts}\n{building.description}";
     }
 }
 
@@ -95,4 +121,7 @@ public class BuildingData
     public Sprite icon;           // Иконка здания
     public string description;    // Описание здания
     public GameObject prefab;     // Префаб здания
+
+    [Header("Стоимость постройки")]
+    public List<ResourceRequirement> costs; // Список затрат ресурсов
 }

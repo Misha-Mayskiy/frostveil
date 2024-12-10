@@ -73,6 +73,11 @@ MonoBehaviour:
   buildingName: "\u0422\u0435\u0440\u043C\u043E\u0431\u0443\u0440"
   pollutionRate: 1
   pollutionCount: 100
+  resourceRequirements:
+  - resourceType: 2
+    amount: 10
+  - resourceType: 4
+    amount: 10
   resourceType: 0
   resourceDetectionRadius: 1
 --- !u!1001 &7747896447914637955

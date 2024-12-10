@@ -73,6 +73,9 @@ MonoBehaviour:
   buildingName: "\u0416\u0438\u043B\u043E\u0439 \u0434\u043E\u043C"
   pollutionRate: 0
   pollutionCount: 0
+  resourceRequirements:
+  - resourceType: 2
+    amount: 25
   capacity: 10
 --- !u!1001 &5181746916841672544
 PrefabInstance:
