@@ -118,6 +118,20 @@ public abstract class Building : MonoBehaviour
             ResourceManager.Instance.RemoveResource(requirement.resourceType, requirement.amount);
         }
     }
+
+    public Dictionary<ResourceManager.ResourceType, int> GetResourceRefund()
+    {
+        var refund = new Dictionary<ResourceManager.ResourceType, int>();
+        foreach (var requirement in resourceRequirements)
+        {
+            int refundAmount = Mathf.FloorToInt(requirement.amount * 0.6f); // Рассчитываем 60%
+            if (refundAmount > 0)
+            {
+                refund[requirement.resourceType] = refundAmount;
+            }
+        }
+        return refund;
+    }
 }
 
 [System.Serializable]

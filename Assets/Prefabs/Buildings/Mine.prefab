@@ -74,10 +74,10 @@ MonoBehaviour:
   pollutionRate: 1
   pollutionCount: 150
   resourceRequirements:
-  - resourceType: 2
-    amount: 20
+  - resourceType: 3
+    amount: 25
   - resourceType: 4
-    amount: 20
+    amount: 25
   resourceType: 0
   resourceDetectionRadius: 1
 --- !u!1001 &8746343141869239852

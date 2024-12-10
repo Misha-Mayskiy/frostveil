@@ -262,20 +262,30 @@ public class BuildingInfoManager : MonoBehaviour
     {
         if (currentBuilding != null)
         {
-            // Добавление 50% стоимости здания в ресурсы
-            // int refundAmount = Mathf.FloorToInt(currentBuilding.BuildCost * 0.5f);
-            // ResourceManager.Instance.AddResources(refundAmount);
+            // Возвращаем 60% ресурсов
+            var refund = currentBuilding.GetResourceRefund();
+            foreach (var resource in refund)
+            {
+                ResourceManager.Instance.AddResource(resource.Key, resource.Value);
+            }
 
+            // Убираем рабочих
             ResidentManager.Instance.UnassignWorkers(currentBuilding.currentWorkers);
-            if (currentBuilding is House house) {
+
+            // Обрабатываем события, специфичные для здания
+            if (currentBuilding is House house)
+            {
                 house.OnDestroyed();
             }
 
+            // Удаляем здание из списка
             FindObjectOfType<BuildingManager>().UnregisterBuilding(currentBuilding);
 
+            // Уничтожаем объект
             Destroy(currentBuilding.gameObject);
             currentBuilding = null;
 
+            // Закрываем панель
             gameObject.SetActive(false);
         }
     }
