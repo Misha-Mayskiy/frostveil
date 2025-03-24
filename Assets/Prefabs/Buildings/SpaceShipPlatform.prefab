@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7934820754275071215}
   - component: {fileID: 2152287102575326607}
   m_Layer: 5
-  m_Name: SendResources
+  m_Name: SendButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 1194620598560062209}
   - component: {fileID: 7753608781338619114}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: SendResources
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
