@@ -15378,8 +15378,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 2
-      outSlope: 2
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -15429,6 +15429,7 @@ MonoBehaviour:
     m_ColorSpace: -1
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
+  transitionSpeed: 1
 --- !u!4 &722187851 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8029499422437096157, guid: f1f77a930430d1740805bdfe245e10ef,
